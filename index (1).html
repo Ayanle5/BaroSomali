@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Baro Somali – Learn Somali</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700;800&family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav" style="display:none">
+  <div class="nav-logo">Baro Somali <span>بارو صومالي</span></div>
+  <div class="nav-links">
+    <button class="nav-btn" onclick="showPage('dashboard')">Dashboard</button>
+    <button class="nav-btn" onclick="showPage('phrasebook')">📖 Word Bank</button>
+    <button class="nav-btn" onclick="showPage('chat')">Chat</button>
+    <button class="dark-toggle" onclick="toggleDark()" id="dark-btn">🌙</button>
+    <button class="nav-btn" onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- ===== HERO ===== -->
+<div id="hero-page" class="page active">
+  <div class="hero-badge">🇸🇴 Learn Somali</div>
+  <h1 class="hero-title">Baro <span>Somali</span></h1>
+  <p class="hero-sub">Master the Somali language through interactive lessons, quizzes, and daily practice. Your journey starts with a single word.</p>
+  <button class="hero-cta" onclick="showPage('auth')">Get Started — It's Free</button>
+  <div class="hero-flags">
+    <div class="flag-stripe"></div><div class="flag-stripe"></div><div class="flag-stripe"></div>
+  </div>
+</div>
+
+<!-- ===== AUTH ===== -->
+<div id="auth-page" class="page">
+  <div class="auth-card">
+    <h2>Welcome</h2>
+    <p>Join thousands learning Somali today</p>
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="tab-login" onclick="switchTab('login')">Log In</button>
+      <button class="auth-tab" id="tab-signup" onclick="switchTab('signup')">Sign Up</button>
+    </div>
+    <div id="login-form">
+      <div class="form-group"><label>Email</label><input type="email" id="login-user" placeholder="Your email"/></div>
+      <div class="form-group"><label>Password</label><input type="password" id="login-pass" placeholder="Your password"/></div>
+      <button class="auth-submit" onclick="doLogin()">Log In</button>
+    </div>
+    <div id="signup-form" style="display:none">
+      <div class="form-group"><label>Username</label><input type="text" id="signup-name" placeholder="Choose a display name"/></div>
+      <div class="form-group"><label>Email</label><input type="email" id="signup-user" placeholder="Your email"/></div>
+      <div class="form-group"><label>Password</label><input type="password" id="signup-pass" placeholder="Choose a password (min 6 chars)"/></div>
+      <button class="auth-submit" onclick="doSignup()">Create Account</button>
+    </div>
+    <div class="auth-error" id="auth-error"></div>
+  </div>
+</div>
+
+<!-- ===== DASHBOARD ===== -->
+<div id="dashboard-page" class="page">
+  <div id="dash-content"></div>
+</div>
+
+<!-- ===== LESSON ===== -->
+<div id="lesson-page" class="page">
+  <div id="lesson-content"></div>
+</div>
+
+<!-- ===== WORD BANK ===== -->
+<div id="phrasebook-page" class="page">
+  <div id="phrasebook-content"></div>
+</div>
+
+<!-- ===== CHAT ===== -->
+<div id="chat-page" class="page">
+  <div class="chat-header">
+    <h2>💬 Community Chat</h2>
+    <p>Practice Somali with other learners. Any message posted is visible to everyone.</p>
+  </div>
+  <div class="chat-box">
+    <div class="chat-messages" id="chat-messages"></div>
+    <div class="chat-input-row">
+      <input class="chat-input" id="chat-input" placeholder="Write a message… try it in Somali!" onkeydown="if(event.key==='Enter') sendChat()"/>
+      <button class="chat-send-btn" onclick="sendChat()">Send</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==========================================
+     FIREBASE SDK  (v9 compat build)
+     ========================================== -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<script>
+  // =====================================================
+  // 🔥 YOUR FIREBASE CONFIG — replace with your own values
+  // from Firebase Console → Project Settings → Your apps
+  // =====================================================
+  const firebaseConfig = {
+    apiKey:            "YOUR_API_KEY",
+    authDomain:        "YOUR_PROJECT_ID.firebaseapp.com",
+    projectId:         "YOUR_PROJECT_ID",
+    storageBucket:     "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId:             "YOUR_APP_ID"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
