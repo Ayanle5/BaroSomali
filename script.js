@@ -617,12 +617,34 @@ function showToast(msg) {
 }
 
 // ==============================
+// MOBILE NAV DRAWER
+// ==============================
+function toggleDrawer() {
+  document.getElementById('nav-drawer').classList.toggle('open');
+}
+function closeDrawer() {
+  document.getElementById('nav-drawer').classList.remove('open');
+}
+// Close drawer when tapping outside
+document.addEventListener('click', (e) => {
+  const drawer = document.getElementById('nav-drawer');
+  const hamburger = document.getElementById('hamburger-btn');
+  if (drawer && hamburger && !drawer.contains(e.target) && !hamburger.contains(e.target)) {
+    drawer.classList.remove('open');
+  }
+});
+
+// ==============================
 // DARK MODE
 // ==============================
 function toggleDark() {
   const isDark = document.body.classList.toggle('dark');
   localStorage.setItem('bs_dark', isDark ? '1' : '0');
-  document.getElementById('dark-btn').textContent = isDark ? '☀️' : '🌙';
+  const icon = isDark ? '☀️' : '🌙';
+  const btn = document.getElementById('dark-btn');
+  const btnM = document.getElementById('dark-btn-mobile');
+  if (btn) btn.textContent = icon;
+  if (btnM) btnM.textContent = icon;
 }
 
 // ==============================
@@ -631,8 +653,10 @@ function toggleDark() {
 (function init() {
   if (localStorage.getItem('bs_dark') === '1') {
     document.body.classList.add('dark');
-    const btn = document.getElementById('dark-btn');
-    if (btn) btn.textContent = '☀️';
+    const btn  = document.getElementById('dark-btn');
+    const btnM = document.getElementById('dark-btn-mobile');
+    if (btn)  btn.textContent  = '☀️';
+    if (btnM) btnM.textContent = '☀️';
   }
   // Auth state is handled by onAuthStateChanged above — no localStorage session needed
 })();
