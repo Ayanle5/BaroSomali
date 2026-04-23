@@ -135,9 +135,7 @@ nav {
 .nav-btn.active { background: white; color: var(--blue); }
 
 .hero-footer {
-  position: absolute;
-  bottom: 16px;
-  width: 100%;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
 }
