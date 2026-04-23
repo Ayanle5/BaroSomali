@@ -813,3 +813,33 @@ nav {
   nav { padding: 0 14px; }
   .nav-logo { font-size: 1rem; }
 }
+/* ===== HERO SPACING FIX ===== */
+#hero-page {
+  justify-content: center;
+  gap: 18px;
+}
+
+/* tighten feature spacing */
+.features-section {
+  margin-top: 30px;
+}
+
+/* bring Instagram up */
+.hero-footer {
+  margin-top: 18px;
+}
+
+/* mobile fine-tune */
+@media (max-width: 480px) {
+  #hero-page {
+    gap: 14px;
+  }
+
+  .features-section {
+    margin-top: 20px;
+  }
+
+  .hero-footer {
+    margin-top: 14px;
+  }
+}
