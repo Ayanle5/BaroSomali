@@ -242,6 +242,68 @@ nav {
 }
 .flag-stripe { width: 40px; height: 6px; border-radius: 3px; background: white; }
 
+/* FEATURES SECTION */
+.features-section {
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 60px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* Card */
+.feature-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px 18px;
+  text-align: left;
+  color: white;
+  transition: 0.25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.14);
+}
+
+/* Icon */
+.feature-icon {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* Text */
+.feature-card h3 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.feature-card p {
+  font-size: 0.82rem;
+  opacity: 0.85;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ==============================
    AUTH
    ============================== */
