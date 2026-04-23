@@ -239,7 +239,7 @@ nav {
 
 #hero-page.active { display: flex !important; }
 #hero-page {
-  min-height: calc(100vh - 60px);
+  min-height: 100vh;
   background: linear-gradient(160deg, var(--blue) 0%, #2563a8 55%, #1a3a6b 100%);
   flex-direction: column;
   align-items: center; justify-content: center;
