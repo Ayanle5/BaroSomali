@@ -134,6 +134,33 @@ nav {
 .nav-btn:hover { background: rgba(255,255,255,0.3); }
 .nav-btn.active { background: white; color: var(--blue); }
 
+.hero-footer {
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.insta-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.75);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.insta-link:hover {
+  color: white;
+  transform: translateY(-1px);
+}
+
+.insta-icon {
+  font-size: 1rem;
+}
+
 /* Hamburger — hidden on desktop */
 .nav-hamburger {
   display: none;
