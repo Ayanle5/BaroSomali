@@ -186,6 +186,12 @@ nav {
 /* ==============================
    HERO
    ============================== */
+
+.hero-badge,
+.hero-flags {
+  display: none;
+}
+
 #hero-page.active { display: flex !important; }
 #hero-page {
   min-height: calc(100vh - 60px);
