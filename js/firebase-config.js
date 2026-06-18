@@ -8,12 +8,13 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-aut
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCjB-bL7NoQzyIZ9Y0eA5EdHgQgsTQZeDU",
+  authDomain: "barosomali-438dd.firebaseapp.com",
+  projectId: "barosomali-438dd",
+  storageBucket: "barosomali-438dd.firebasestorage.app",
+  messagingSenderId: "649615790890",
+  appId: "1:649615790890:web:5d30f5bb872b62c42e8453",
+  measurementId: "G-X28SLBD0KM"
 };
 
 const app = initializeApp(firebaseConfig);
