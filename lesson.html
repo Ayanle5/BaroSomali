@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson — BaroSomali</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="lesson-shell">
+    <div class="lesson-header">
+      <button class="lesson-exit" id="lesson-exit-btn" aria-label="Exit lesson">&times;</button>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <div class="lesson-body" id="lesson-body">
+      <div class="loading-text" id="lesson-loading">Loading lesson...</div>
+    </div>
+  </div>
+
+  <div class="feedback-banner" id="feedback-banner">
+    <div class="feedback-text" id="feedback-text"></div>
+    <button class="btn btn-primary" id="feedback-continue-btn">Continue</button>
+  </div>
+
+  <script type="module" src="js/lesson-page.js"></script>
+</body>
+</html>

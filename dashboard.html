@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — BaroSomali</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="app-shell">
+    <div class="topbar">
+      <div class="brand">
+        <span class="star"></span>
+        BaroSomali
+      </div>
+      <div class="stat-pills">
+        <div class="stat-pill xp">⚡ <span id="xp-value">0</span> XP</div>
+        <div class="stat-pill streak">🔥 <span id="streak-value">0</span></div>
+        <button class="btn btn-outline" id="logout-btn">Log out</button>
+      </div>
+    </div>
+
+    <main class="dashboard-main">
+      <div id="dashboard-loading" class="loading-text">Loading your lessons...</div>
+
+      <div id="dashboard-content" class="hidden">
+        <h1 class="dashboard-greeting">Your lessons</h1>
+        <p class="dashboard-sub">Pick up where you left off.</p>
+
+        <div class="lesson-path" id="lesson-path">
+          <!-- Lesson nodes injected by JS -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="js/dashboard-page.js"></script>
+</body>
+</html>
